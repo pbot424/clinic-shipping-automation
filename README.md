@@ -81,4 +81,4 @@ The production adapter was developed for a particular Windows/FedEx/printer setu
 
 This repository showcases the current clinic application with a fresh, sanitized Git history. It contains no live recipient directory, shipment journal, tracking export, account configuration, employer branding, or private deployment history. The screenshot and demo are synthetic. Older spreadsheet experiments and internal operating notes remain outside this edition.
 
-The project was developed iteratively with AI-assisted implementation and testing, guided by real operator feedback: keep shipping, keep preparing the next clinic, and make uncertain outcomes visible instead of retrying blindly.
+Real operator feedback guided the design: keep shipping, keep preparing the next clinic, and make uncertain outcomes visible instead of retrying blindly.
