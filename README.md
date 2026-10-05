@@ -43,11 +43,11 @@ Python and Tkinter keep the interface lightweight. SQLite supplies durable local
 
 ## Results and what was measured
 
-The deployed workflow has produced labels and collected tracking matched by exact shipment reference. Its queue allows another clinic to be prepared during an active print, and automated tests exercise that concurrency boundary.
+**Estimated 50%+ reduction in hands-on shipping time, based on operator experience.** The savings include label preparation, tracking transcription and formatting, and reduced time spent waiting on a lagging interface.
 
-Earlier prototype timing records show an observed **approximately 20–23% reduction in time to print confirmation per label** after foreground tracking work was removed.
+The operator recalls spending over 14 minutes processing roughly four labels in the previous workflow. With this app, requests can be queued in seconds, printing continues in the background, and tracking becomes ready to copy on the same screen. The operator reports a more responsive interface and can return to other tasks while the queue runs.
 
-Those figures come from a small set of before/after prototype observations—not a controlled benchmark of the current native integration, and not a measurement of manual labor saved. The current workflow prioritizes reducing hands-on steps; native polling can still take about a minute to begin a label. [See the measurements, calculations, and limits.](docs/RESULTS.md)
+The benefit is time returned to the operator throughout the workday. The 50%+ figure is a workflow estimate; physical printing still depends on FedEx processing and printer confirmation. Separate prototype timings and the basis for the estimate are documented in [Results and timing evidence](docs/RESULTS.md).
 
 ## Try it without FedEx
 
