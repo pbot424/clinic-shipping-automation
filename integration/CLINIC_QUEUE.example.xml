@@ -1,0 +1,1056 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<profile intergrationtype="2" hostlanguage="0" hosttype="0" completed="True" profileversion="40.04.1042.00">
+  <name>CLINIC_QUEUE</name>
+  <date>10/1/2026 1:38:08 PM</date>
+  <datasource>
+    <name>C:\DEMO_ONLY\ClinicShipping\clinic-form\clinic-template.csv</name>
+    <provider>#Internal#</provider>
+    <datasourceinformation type="2" qidleft="" qidright="">C:\DEMO_ONLY\ClinicShipping\clinic-form\clinic-template.csv</datasourceinformation>
+    <table delimiter="," header="1">
+      <field name="RequestId" type="0" ordinal="0" screenviewtype="0" />
+      <field name="RecipientId" type="0" ordinal="1" screenviewtype="0" />
+      <field name="Contact" type="0" ordinal="2" screenviewtype="0" />
+      <field name="Company" type="0" ordinal="3" screenviewtype="0" />
+      <field name="Address1" type="0" ordinal="4" screenviewtype="0" />
+      <field name="Address2" type="0" ordinal="5" screenviewtype="0" />
+      <field name="Address3" type="0" ordinal="6" screenviewtype="0" />
+      <field name="City" type="0" ordinal="7" screenviewtype="0" />
+      <field name="State" type="0" ordinal="8" screenviewtype="0" />
+      <field name="Postal" type="0" ordinal="9" screenviewtype="0" />
+      <field name="RecipientEmail" type="0" ordinal="10" screenviewtype="0" />
+      <field name="Signature" type="0" ordinal="11" screenviewtype="0" />
+      <field name="SurroundPremium" type="0" ordinal="12" screenviewtype="0" />
+      <field name="Phone" type="0" ordinal="13" screenviewtype="0" />
+    </table>
+    <command activate="9" type="0" screenviewtype="0" AutoShipFolder="C:\DEMO_ONLY\ClinicShipping\clinic-form\inbox" AutoShipFrequency="60">
+      <table>
+        <field name="Bill Transportation To" screenviewtype="0">
+          <id>23</id>
+          <fename>Bill Transportation To</fename>
+          <key>23Package</key>
+          <fetype>1</fetype>
+          <fesize>2</fesize>
+          <category>Package</category>
+          <fegroup>Billing</fegroup>
+          <conversiongroup>shipmentpaymenttypes</conversiongroup>
+          <defaultvalue>1</defaultvalue>
+          <shipmentlevel>.PaymentType</shipmentlevel>
+          <packagelevel>.PaymentType</packagelevel>
+        </field>
+        <field name="Package Type" screenviewtype="0">
+          <id>1273</id>
+          <fename>Package Type</fename>
+          <key>1273Package</key>
+          <fetype>1</fetype>
+          <fesize>2</fesize>
+          <category>Package</category>
+          <fegroup>Package</fegroup>
+          <conversiongroup>packagetypes</conversiongroup>
+          <defaultvalue>1</defaultvalue>
+          <shipmentlevel>.PackageType</shipmentlevel>
+          <packagelevel>.PackageType</packagelevel>
+        </field>
+        <field name="Service Type" screenviewtype="0">
+          <id>1274</id>
+          <fename>Service Type</fename>
+          <key>1274Package</key>
+          <fetype>1</fetype>
+          <fesize>2</fesize>
+          <category>Package</category>
+          <fegroup>Service Type</fegroup>
+          <conversiongroup>servicetypes</conversiongroup>
+          <defaultvalue>1</defaultvalue>
+          <shipmentlevel>.ServiceType</shipmentlevel>
+          <packagelevel>.ServiceType</packagelevel>
+        </field>
+        <field name="Weight" screenviewtype="0">
+          <id>21</id>
+          <fename>Weight</fename>
+          <key>21Package</key>
+          <fetype>1</fetype>
+          <fesize>8</fesize>
+          <category>Package</category>
+          <fegroup>Weight</fegroup>
+          <defaultvalue>1</defaultvalue>
+          <shipmentlevel>.Weight</shipmentlevel>
+          <packagelevel>.Weight</packagelevel>
+          <mpscollection>True</mpscollection>
+        </field>
+        <field name="Number of Packages" screenviewtype="0">
+          <id>116</id>
+          <fename>Number of Packages</fename>
+          <key>116Package</key>
+          <fetype>1</fetype>
+          <fesize>8</fesize>
+          <category>Package</category>
+          <fegroup>Multiple Piece Shipping</fegroup>
+          <defaultvalue>1</defaultvalue>
+          <shipmentlevel>.Count</shipmentlevel>
+          <packagelevel>.Count</packagelevel>
+        </field>
+        <field name="Weight Type" screenviewtype="0">
+          <id>75</id>
+          <fename>Weight Type</fename>
+          <key>75Package</key>
+          <fetype>1</fetype>
+          <fesize>3</fesize>
+          <category>Package</category>
+          <fegroup>Weight</fegroup>
+          <conversiongroup>weightwithscaletypes</conversiongroup>
+          <defaultvalue>2</defaultvalue>
+          <shipmentlevel>.WeightType</shipmentlevel>
+          <packagelevel>.WeightType</packagelevel>
+        </field>
+        <field name="ID" screenviewtype="0">
+          <id>31</id>
+          <fename>ID</fename>
+          <key>31Sender</key>
+          <fetype>0</fetype>
+          <fesize>15</fesize>
+          <category>Sender</category>
+          <fegroup>Miscellaneous</fegroup>
+          <defaultvalue>DEMO_SENDER</defaultvalue>
+          <shipmentlevel>.Sender.Code</shipmentlevel>
+          <packagelevel>.Sender.Code</packagelevel>
+        </field>
+        <field name="Recipient Delivery Notification" screenviewtype="0">
+          <id>1556</id>
+          <fename>Recipient Delivery Notification</fename>
+          <key>1556SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>True</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Recipient.DeliveryNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Recipient.DeliveryNotification</packagelevel>
+        </field>
+        <field name="Recipient Estimated Delivery Notification" screenviewtype="0">
+          <id>7214</id>
+          <fename>Recipient Estimated Delivery Notification</fename>
+          <key>7214SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>False</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Recipient.EstimatedDeliveryNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Recipient.EstimatedDeliveryNotification</packagelevel>
+        </field>
+        <field name="Recipient Exception Notification" screenviewtype="0">
+          <id>1962</id>
+          <fename>Recipient Exception Notification</fename>
+          <key>1962SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>False</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Recipient.ExceptionNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Recipient.ExceptionNotification</packagelevel>
+        </field>
+        <field name="Recipient Shipment Notification" screenviewtype="0">
+          <id>1557</id>
+          <fename>Recipient Shipment Notification</fename>
+          <key>1557SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>True</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Recipient.ShipmentNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Recipient.ShipmentNotification</packagelevel>
+        </field>
+        <field name="Recipient Tendered Notification" screenviewtype="0">
+          <id>5601</id>
+          <fename>Recipient Tendered Notification</fename>
+          <key>5601SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>False</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Recipient.TenderedNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Recipient.TenderedNotification</packagelevel>
+        </field>
+        <field name="Sender Delivery Notification" screenviewtype="0">
+          <id>1553</id>
+          <fename>Sender Delivery Notification</fename>
+          <key>1553SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>True</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Sender.DeliveryNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Sender.DeliveryNotification</packagelevel>
+        </field>
+        <field name="Sender Email" screenviewtype="0">
+          <id>1201</id>
+          <fename>Sender Email</fename>
+          <key>1201SpecialServices</key>
+          <fetype>0</fetype>
+          <fesize>250</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <defaultvalue>shipping@example.test</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Sender.Email</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Sender.Email</packagelevel>
+        </field>
+        <field name="Sender Estimated Delivery Notification" screenviewtype="0">
+          <id>7213</id>
+          <fename>Sender Estimated Delivery Notification</fename>
+          <key>7213SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>True</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</packagelevel>
+        </field>
+        <field name="Sender Exception Notification" screenviewtype="0">
+          <id>1961</id>
+          <fename>Sender Exception Notification</fename>
+          <key>1961SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>True</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Sender.ExceptionNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Sender.ExceptionNotification</packagelevel>
+        </field>
+        <field name="Sender Shipment Notification" screenviewtype="0">
+          <id>1554</id>
+          <fename>Sender Shipment Notification</fename>
+          <key>1554SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>True</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Sender.ShipmentNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Sender.ShipmentNotification</packagelevel>
+        </field>
+        <field name="Sender Tendered Notification" screenviewtype="0">
+          <id>5600</id>
+          <fename>Sender Tendered Notification</fename>
+          <key>5600SpecialServices</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>True</defaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</packagelevel>
+        </field>
+        <field name="Country" screenviewtype="0">
+          <id>50</id>
+          <fename>Country</fename>
+          <key>50Recipient</key>
+          <fetype>0</fetype>
+          <fesize>2</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <conversiongroup>countries</conversiongroup>
+          <defaultvalue>US</defaultvalue>
+          <shipmentlevel>.Recipient.Country</shipmentlevel>
+          <packagelevel>.Recipient.Country</packagelevel>
+        </field>
+        <field name="Save/Update in Address Book" screenviewtype="0">
+          <id>2110</id>
+          <fename>Save/Update in Address Book</fename>
+          <key>2110Recipient</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Recipient</category>
+          <fegroup>Miscellaneous</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <defaultvalue>False</defaultvalue>
+          <shipmentlevel>.Recipient.SaveAddress</shipmentlevel>
+          <packagelevel>.Recipient.SaveAddress</packagelevel>
+        </field>
+      </table>
+      <table name="clinic-template.csv" alias="clinic-template.csv" delimiter="," header="1" tabletype="0">
+        <field name="RequestId" alias="RequestId" type="0" ordinal="0" screenviewtype="0">
+          <id>25</id>
+          <fename>Customer Reference</fename>
+          <key>25Package</key>
+          <fetype>0</fetype>
+          <fesize>39</fesize>
+          <category>Package</category>
+          <fegroup>Reference</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Reference</shipmentlevel>
+          <packagelevel>.Reference</packagelevel>
+          <mpscollection>True</mpscollection>
+        </field>
+        <field name="RecipientEmail" alias="RecipientEmail" type="0" ordinal="10" screenviewtype="0">
+          <id>1202</id>
+          <fename>Recipient Email</fename>
+          <key>1202SpecialServices</key>
+          <fetype>0</fetype>
+          <fesize>250</fesize>
+          <category>Special Services</category>
+          <fegroup>Ship Alert</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.SpecialServices.ShipAlert.Recipient.Email</shipmentlevel>
+          <packagelevel>.SpecialServices.ShipAlert.Recipient.Email</packagelevel>
+        </field>
+        <field name="Signature" alias="Signature" type="0" ordinal="11" screenviewtype="0">
+          <id>2399</id>
+          <fename>Options</fename>
+          <key>2399SpecialServices</key>
+          <fetype>1</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Signature</fegroup>
+          <conversiongroup>signatureoptions</conversiongroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.SpecialServices.SignatureOptions</shipmentlevel>
+          <packagelevel>.SpecialServices.SignatureOptions</packagelevel>
+          <conversion>
+            <select value="4">4 - Adult Signature</select>
+            <select value="1">1 - No Signature Required</select>
+          </conversion>
+        </field>
+        <field name="SurroundPremium" alias="SurroundPremium" type="0" ordinal="12" screenviewtype="0">
+          <id>5400</id>
+          <fename>FedEx Surround® Premium Indicator</fename>
+          <key>5400-M2</key>
+          <fetype>3</fetype>
+          <fesize>1</fesize>
+          <category>Special Services</category>
+          <fegroup>Additional Options</fegroup>
+          <conversiongroup>booleans</conversiongroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.SpecialServices.AdditionalOptions</shipmentlevel>
+          <packagelevel>.SpecialServices.AdditionalOptions</packagelevel>
+          <mpscollection>True</mpscollection>
+          <conversion>
+            <select value="False">False - No/False (Boolean)</select>
+            <select value="True">True - Yes/True (Boolean)</select>
+          </conversion>
+        </field>
+        <field name="Address1" alias="Address1" type="0" ordinal="4" screenviewtype="0">
+          <id>13</id>
+          <fename>Address 1</fename>
+          <key>13Recipient</key>
+          <fetype>0</fetype>
+          <fesize>35</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.Address1</shipmentlevel>
+          <packagelevel>.Recipient.Address1</packagelevel>
+        </field>
+        <field name="City" alias="City" type="0" ordinal="7" screenviewtype="0">
+          <id>15</id>
+          <fename>City</fename>
+          <key>15Recipient</key>
+          <fetype>0</fetype>
+          <fesize>24</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.City</shipmentlevel>
+          <packagelevel>.Recipient.City</packagelevel>
+        </field>
+        <field name="Company" alias="Company" type="0" ordinal="3" screenviewtype="0">
+          <id>11</id>
+          <fename>Company</fename>
+          <key>11Recipient</key>
+          <fetype>0</fetype>
+          <fesize>35</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.Company</shipmentlevel>
+          <packagelevel>.Recipient.Company</packagelevel>
+        </field>
+        <field name="Postal" alias="Postal" type="0" ordinal="9" screenviewtype="0">
+          <id>17</id>
+          <fename>Postal Code</fename>
+          <key>17Recipient</key>
+          <fetype>0</fetype>
+          <fesize>10</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.zip</shipmentlevel>
+          <packagelevel>.Recipient.zip</packagelevel>
+        </field>
+        <field name="State" alias="State" type="0" ordinal="8" screenviewtype="0">
+          <id>16</id>
+          <fename>State/Province</fename>
+          <key>16Recipient</key>
+          <fetype>0</fetype>
+          <fesize>2</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <conversiongroup>states</conversiongroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.State</shipmentlevel>
+          <packagelevel>.Recipient.State</packagelevel>
+          <conversion>
+            <select value="AA">AA - Armed Forces Americas</select>
+            <select value="AE">AE - Armed Forces Europe</select>
+            <select value="AK">AK - Alaska</select>
+            <select value="AL">AL - Alabama</select>
+            <select value="AP">AP - Armed Forces Pacific</select>
+            <select value="AR">AR - Arkansas</select>
+            <select value="AZ">AZ - Arizona</select>
+            <select value="CA">CA - California</select>
+            <select value="CO">CO - Colorado</select>
+            <select value="CT">CT - Connecticut</select>
+            <select value="DC">DC - District of Columbia</select>
+            <select value="DE">DE - Delaware</select>
+            <select value="FL">FL - Florida</select>
+            <select value="GA">GA - Georgia</select>
+            <select value="HI">HI - Hawaii</select>
+            <select value="IA">IA - Iowa</select>
+            <select value="ID">ID - Idaho</select>
+            <select value="IL">IL - Illinois</select>
+            <select value="IN">IN - Indiana</select>
+            <select value="KS">KS - Kansas</select>
+            <select value="KY">KY - Kentucky</select>
+            <select value="LA">LA - Louisiana</select>
+            <select value="MA">MA - Massachusetts</select>
+            <select value="MD">MD - Maryland</select>
+            <select value="ME">ME - Maine</select>
+            <select value="MI">MI - Michigan</select>
+            <select value="MN">MN - Minnesota</select>
+            <select value="MO">MO - Missouri</select>
+            <select value="MS">MS - Mississippi</select>
+            <select value="MT">MT - Montana</select>
+            <select value="NC">NC - North Carolina</select>
+            <select value="ND">ND - North Dakota</select>
+            <select value="NE">NE - Nebraska</select>
+            <select value="NH">NH - New Hampshire</select>
+            <select value="NJ">NJ - New Jersey</select>
+            <select value="NM">NM - New Mexico</select>
+            <select value="NV">NV - Nevada</select>
+            <select value="NY">NY - New York</select>
+            <select value="OH">OH - Ohio</select>
+            <select value="OK">OK - Oklahoma</select>
+            <select value="OR">OR - Oregon</select>
+            <select value="PA">PA - Pennsylvania</select>
+            <select value="PR">PR - Puerto Rico</select>
+            <select value="RI">RI - Rhode Island</select>
+            <select value="SC">SC - South Carolina</select>
+            <select value="SD">SD - South Dakota</select>
+            <select value="TN">TN - Tennessee</select>
+            <select value="TX">TX - Texas</select>
+            <select value="UT">UT - Utah</select>
+            <select value="VA">VA - Virginia</select>
+            <select value="VT">VT - Vermont</select>
+            <select value="WA">WA - Washington</select>
+            <select value="WI">WI - Wisconsin</select>
+            <select value="WV">WV - West Virginia</select>
+            <select value="WY">WY - Wyoming</select>
+          </conversion>
+        </field>
+        <field name="Address2" alias="Address2" type="0" ordinal="5" screenviewtype="0">
+          <id>14</id>
+          <fename>Address 2</fename>
+          <key>14Recipient</key>
+          <fetype>0</fetype>
+          <fesize>35</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.Address2</shipmentlevel>
+          <packagelevel>.Recipient.Address2</packagelevel>
+        </field>
+        <field name="Address3" alias="Address3" type="0" ordinal="6" screenviewtype="0">
+          <id>2944</id>
+          <fename>Address 3</fename>
+          <key>2944Recipient</key>
+          <fetype>0</fetype>
+          <fesize>35</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.Address3</shipmentlevel>
+          <packagelevel>.Recipient.Address3</packagelevel>
+        </field>
+        <field name="Contact" alias="Contact" type="0" ordinal="2" screenviewtype="0">
+          <id>12</id>
+          <fename>Contact Name</fename>
+          <key>12Recipient</key>
+          <fetype>0</fetype>
+          <fesize>35</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.Contact</shipmentlevel>
+          <packagelevel>.Recipient.Contact</packagelevel>
+        </field>
+        <field name="RecipientId" alias="RecipientId" type="0" ordinal="1" screenviewtype="0">
+          <id>19</id>
+          <fename>ID</fename>
+          <key>19Recipient</key>
+          <fetype>0</fetype>
+          <fesize>15</fesize>
+          <category>Recipient</category>
+          <fegroup>Miscellaneous</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.Code</shipmentlevel>
+          <packagelevel>.Recipient.Code</packagelevel>
+        </field>
+        <field name="Phone" alias="Phone" type="0" ordinal="13" screenviewtype="0">
+          <id>18</id>
+          <fename>Phone</fename>
+          <key>18Recipient</key>
+          <fetype>0</fetype>
+          <fesize>15</fesize>
+          <category>Recipient</category>
+          <fegroup>Address</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Recipient.Phone</shipmentlevel>
+          <packagelevel>.Recipient.Phone</packagelevel>
+        </field>
+      </table>
+      <field screenviewtype="0" automatched="0">
+        <id>23</id>
+        <fename>Bill Transportation To</fename>
+        <key>23Package</key>
+        <fetype>1</fetype>
+        <fesize>2</fesize>
+        <category>Package</category>
+        <fegroup>Billing</fegroup>
+        <conversiongroup>shipmentpaymenttypes</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.PaymentType</shipmentlevel>
+        <packagelevel>.PaymentType</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1273</id>
+        <fename>Package Type</fename>
+        <key>1273Package</key>
+        <fetype>1</fetype>
+        <fesize>2</fesize>
+        <category>Package</category>
+        <fegroup>Package</fegroup>
+        <conversiongroup>packagetypes</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.PackageType</shipmentlevel>
+        <packagelevel>.PackageType</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1274</id>
+        <fename>Service Type</fename>
+        <key>1274Package</key>
+        <fetype>1</fetype>
+        <fesize>2</fesize>
+        <category>Package</category>
+        <fegroup>Service Type</fegroup>
+        <conversiongroup>servicetypes</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.ServiceType</shipmentlevel>
+        <packagelevel>.ServiceType</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>21</id>
+        <fename>Weight</fename>
+        <key>21Package</key>
+        <fetype>1</fetype>
+        <fesize>8</fesize>
+        <category>Package</category>
+        <fegroup>Weight</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Weight</shipmentlevel>
+        <packagelevel>.Weight</packagelevel>
+        <mpscollection>True</mpscollection>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>116</id>
+        <fename>Number of Packages</fename>
+        <key>116Package</key>
+        <fetype>1</fetype>
+        <fesize>8</fesize>
+        <category>Package</category>
+        <fegroup>Multiple Piece Shipping</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Count</shipmentlevel>
+        <packagelevel>.Count</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>25</id>
+        <fename>Customer Reference</fename>
+        <key>25Package</key>
+        <fetype>0</fetype>
+        <fesize>39</fesize>
+        <category>Package</category>
+        <fegroup>Reference</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Reference</shipmentlevel>
+        <packagelevel>.Reference</packagelevel>
+        <mpscollection>True</mpscollection>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>75</id>
+        <fename>Weight Type</fename>
+        <key>75Package</key>
+        <fetype>1</fetype>
+        <fesize>3</fesize>
+        <category>Package</category>
+        <fegroup>Weight</fegroup>
+        <conversiongroup>weightwithscaletypes</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.WeightType</shipmentlevel>
+        <packagelevel>.WeightType</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>31</id>
+        <fename>ID</fename>
+        <key>31Sender</key>
+        <fetype>0</fetype>
+        <fesize>15</fesize>
+        <category>Sender</category>
+        <fegroup>Miscellaneous</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Sender.Code</shipmentlevel>
+        <packagelevel>.Sender.Code</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1556</id>
+        <fename>Recipient Delivery Notification</fename>
+        <key>1556SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Recipient.DeliveryNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Recipient.DeliveryNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1202</id>
+        <fename>Recipient Email</fename>
+        <key>1202SpecialServices</key>
+        <fetype>0</fetype>
+        <fesize>250</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Recipient.Email</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Recipient.Email</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>7214</id>
+        <fename>Recipient Estimated Delivery Notification</fename>
+        <key>7214SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Recipient.EstimatedDeliveryNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Recipient.EstimatedDeliveryNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1962</id>
+        <fename>Recipient Exception Notification</fename>
+        <key>1962SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Recipient.ExceptionNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Recipient.ExceptionNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1557</id>
+        <fename>Recipient Shipment Notification</fename>
+        <key>1557SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Recipient.ShipmentNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Recipient.ShipmentNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>5601</id>
+        <fename>Recipient Tendered Notification</fename>
+        <key>5601SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Recipient.TenderedNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Recipient.TenderedNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1553</id>
+        <fename>Sender Delivery Notification</fename>
+        <key>1553SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Sender.DeliveryNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Sender.DeliveryNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1201</id>
+        <fename>Sender Email</fename>
+        <key>1201SpecialServices</key>
+        <fetype>0</fetype>
+        <fesize>250</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Sender.Email</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Sender.Email</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>7213</id>
+        <fename>Sender Estimated Delivery Notification</fename>
+        <key>7213SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1961</id>
+        <fename>Sender Exception Notification</fename>
+        <key>1961SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Sender.ExceptionNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Sender.ExceptionNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>1554</id>
+        <fename>Sender Shipment Notification</fename>
+        <key>1554SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Sender.ShipmentNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Sender.ShipmentNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>5600</id>
+        <fename>Sender Tendered Notification</fename>
+        <key>5600SpecialServices</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Ship Alert</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</shipmentlevel>
+        <packagelevel>.SpecialServices.ShipAlert.Sender.TenderedNotification</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>2399</id>
+        <fename>Options</fename>
+        <key>2399SpecialServices</key>
+        <fetype>1</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Signature</fegroup>
+        <conversiongroup>signatureoptions</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.SignatureOptions</shipmentlevel>
+        <packagelevel>.SpecialServices.SignatureOptions</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>5400</id>
+        <fename>FedEx Surround® Premium Indicator</fename>
+        <key>5400-M2</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Special Services</category>
+        <fegroup>Additional Options</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.SpecialServices.AdditionalOptions</shipmentlevel>
+        <packagelevel>.SpecialServices.AdditionalOptions</packagelevel>
+        <mpscollection>True</mpscollection>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>13</id>
+        <fename>Address 1</fename>
+        <key>13Recipient</key>
+        <fetype>0</fetype>
+        <fesize>35</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Address1</shipmentlevel>
+        <packagelevel>.Recipient.Address1</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>15</id>
+        <fename>City</fename>
+        <key>15Recipient</key>
+        <fetype>0</fetype>
+        <fesize>24</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.City</shipmentlevel>
+        <packagelevel>.Recipient.City</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>11</id>
+        <fename>Company</fename>
+        <key>11Recipient</key>
+        <fetype>0</fetype>
+        <fesize>35</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Company</shipmentlevel>
+        <packagelevel>.Recipient.Company</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>50</id>
+        <fename>Country</fename>
+        <key>50Recipient</key>
+        <fetype>0</fetype>
+        <fesize>2</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <conversiongroup>countries</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Country</shipmentlevel>
+        <packagelevel>.Recipient.Country</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>17</id>
+        <fename>Postal Code</fename>
+        <key>17Recipient</key>
+        <fetype>0</fetype>
+        <fesize>10</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.zip</shipmentlevel>
+        <packagelevel>.Recipient.zip</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>16</id>
+        <fename>State/Province</fename>
+        <key>16Recipient</key>
+        <fetype>0</fetype>
+        <fesize>2</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <conversiongroup>states</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.State</shipmentlevel>
+        <packagelevel>.Recipient.State</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>14</id>
+        <fename>Address 2</fename>
+        <key>14Recipient</key>
+        <fetype>0</fetype>
+        <fesize>35</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Address2</shipmentlevel>
+        <packagelevel>.Recipient.Address2</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>2944</id>
+        <fename>Address 3</fename>
+        <key>2944Recipient</key>
+        <fetype>0</fetype>
+        <fesize>35</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Address3</shipmentlevel>
+        <packagelevel>.Recipient.Address3</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>12</id>
+        <fename>Contact Name</fename>
+        <key>12Recipient</key>
+        <fetype>0</fetype>
+        <fesize>35</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Contact</shipmentlevel>
+        <packagelevel>.Recipient.Contact</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>19</id>
+        <fename>ID</fename>
+        <key>19Recipient</key>
+        <fetype>0</fetype>
+        <fesize>15</fesize>
+        <category>Recipient</category>
+        <fegroup>Miscellaneous</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Code</shipmentlevel>
+        <packagelevel>.Recipient.Code</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>2110</id>
+        <fename>Save/Update in Address Book</fename>
+        <key>2110Recipient</key>
+        <fetype>3</fetype>
+        <fesize>1</fesize>
+        <category>Recipient</category>
+        <fegroup>Miscellaneous</fegroup>
+        <conversiongroup>booleans</conversiongroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.SaveAddress</shipmentlevel>
+        <packagelevel>.Recipient.SaveAddress</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>18</id>
+        <fename>Phone</fename>
+        <key>18Recipient</key>
+        <fetype>0</fetype>
+        <fesize>15</fesize>
+        <category>Recipient</category>
+        <fegroup>Address</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Recipient.Phone</shipmentlevel>
+        <packagelevel>.Recipient.Phone</packagelevel>
+      </field>
+    </command>
+  </datasource>
+<datasource>
+    <name>C:\DEMO_ONLY\ClinicShipping\clinic-form\tracking-export.csv</name>
+    <provider>#Internal#</provider>
+    <datasourceinformation type="2" qidleft="" qidright="">C:\DEMO_ONLY\ClinicShipping\clinic-form\tracking-export.csv</datasourceinformation>
+    <table delimiter="," header="1">
+      <field name="RequestId" type="0" ordinal="0" screenviewtype="0" />
+      <field name="TrackingNumber" type="0" ordinal="1" screenviewtype="0" />
+    </table>
+    <command activate="4" type="1" screenviewtype="0" includemanualshipments="0">
+      <table name="tracking-export.csv" alias="tracking-export.csv" delimiter="," header="1" tabletype="0">
+        <field name="RequestId" alias="RequestId" type="0" ordinal="0" screenviewtype="0">
+          <id>25</id>
+          <fename>Customer Reference</fename>
+          <key>25Package</key>
+          <fetype>0</fetype>
+          <fesize>39</fesize>
+          <category>Package</category>
+          <fegroup>Reference</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.Reference</shipmentlevel>
+          <packagelevel>.Reference</packagelevel>
+          <mpscollection>True</mpscollection>
+        </field>
+        <field name="TrackingNumber" alias="TrackingNumber" type="0" ordinal="1" screenviewtype="0">
+          <id>29</id>
+          <fename>Tracking Number</fename>
+          <key>29TrackingNumbers</key>
+          <fetype>0</fetype>
+          <fesize>15</fesize>
+          <category>Tracking Numbers</category>
+          <fegroup>Tracking Numbers</fegroup>
+          <customdefaultvalue>NO</customdefaultvalue>
+          <shipmentlevel>.TrackingNumber</shipmentlevel>
+          <packagelevel>.TrackNo</packagelevel>
+        </field>
+      </table>
+      <field screenviewtype="0" automatched="0">
+        <id>29</id>
+        <fename>Tracking Number</fename>
+        <key>29TrackingNumbers</key>
+        <fetype>0</fetype>
+        <fesize>15</fesize>
+        <category>Tracking Numbers</category>
+        <fegroup>Tracking Numbers</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.TrackingNumber</shipmentlevel>
+        <packagelevel>.TrackNo</packagelevel>
+      </field>
+      <field screenviewtype="0" automatched="0">
+        <id>25</id>
+        <fename>Customer Reference</fename>
+        <key>25Package</key>
+        <fetype>0</fetype>
+        <fesize>39</fesize>
+        <category>Package</category>
+        <fegroup>Reference</fegroup>
+        <customdefaultvalue>NO</customdefaultvalue>
+        <occurrence>1</occurrence>
+        <shipmentlevel>.Reference</shipmentlevel>
+        <packagelevel>.Reference</packagelevel>
+        <mpscollection>True</mpscollection>
+      </field>
+    </command>
+  </datasource>
+</profile>

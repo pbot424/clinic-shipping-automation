@@ -1,0 +1,44 @@
+# Local environments and build artifacts
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.coverage
+htmlcov/
+
+# Operational data must never be committed
+clinic-directory.json
+clinic-overrides.json
+profile-manifest.json
+tracking-cache.json
+tracking-export.csv
+config.json
+config.local.json
+*.sqlite*
+*.db
+*.csv
+*.xlsx
+*.xls
+*.staged
+*.log
+*.lnk
+*.tmp
+app.lock
+inbox/
+Processed/
+review/
+output/
+local-state/
+HANDOFF.md
+
+# Credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Only sanitized example profiles belong in Git
+integration/*.xml
+!integration/*.example.xml
