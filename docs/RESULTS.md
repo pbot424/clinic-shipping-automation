@@ -10,10 +10,12 @@ The public demo reproduces those interactions without making shipments. Its fict
 
 Private development logs recorded the following elapsed seconds from runner start to print confirmation. This table is a sanitized transcription: recipient names, request IDs, tracking numbers, printer event IDs, and raw logs are deliberately omitted.
 
-| Shipment type | Earlier runner | After removing foreground tracking work | Observed difference |
-| --- | ---: | ---: | ---: |
-| Supplies | 26.631 s | 20.452 s | 6.179 s |
-| Medication | 31.319 s | 25.065 s | 6.254 s |
+| Shipment type | Earlier runner | After removing foreground tracking work | Observed difference | Time reduction |
+| --- | ---: | ---: | ---: | ---: |
+| Supplies | 26.631 s | 20.452 s | 6.179 s | 23.2% |
+| Medication | 31.319 s | 25.065 s | 6.254 s | 20.0% |
+
+Percentage reduction is `(earlier time - later time) / earlier time × 100`. Rounded to whole percentages, these observations support the README's approximately **20–23% reduction**.
 
 The comparison uses the same **print-confirmation milestone** in both versions. It does not mix print time with the later completion of tracking lookup.
 

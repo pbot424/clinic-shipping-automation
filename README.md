@@ -14,7 +14,7 @@ A Windows desktop application that turns repetitive FedEx label preparation into
 
 ## The problem
 
-Shipping to many clinics means repeating the same steps: find the destination, verify contact details, apply the correct service settings, create a label, and find its tracking number. On a busy day, the intended workload is **28 shipments with 28 separate labels**. Repeated data entry and switching between screens make that work harder to manage.
+Shipping to many clinics means repeating the same steps: find the destination, verify contact details, apply the correct service settings, create a label, and find its tracking number. Repeated data entry and switching between screens make that work harder to manage.
 
 Automating clicks alone would leave the operator tied to the shipping window. This project instead puts preparation in a small desktop form, lets the user keep adding clinics while printing continues, and uses FedEx's native integration to process each shipment.
 
@@ -45,7 +45,7 @@ Python and Tkinter keep the interface lightweight. SQLite supplies durable local
 
 The deployed workflow has produced labels and collected tracking matched by exact shipment reference. Its queue allows another clinic to be prepared during an active print, and automated tests exercise that concurrency boundary.
 
-Earlier prototype timing records also show an observed **about 6.2-second reduction in time to print confirmation per label** after foreground tracking work was removed. Applied to a 28-label day, that is **about 2.9 minutes of elapsed processing time** for that earlier runner.
+Earlier prototype timing records show an observed **approximately 20–23% reduction in time to print confirmation per label** after foreground tracking work was removed.
 
 Those figures come from a small set of before/after prototype observations—not a controlled benchmark of the current native integration, and not a measurement of manual labor saved. The current workflow prioritizes reducing hands-on steps; native polling can still take about a minute to begin a label. [See the measurements, calculations, and limits.](docs/RESULTS.md)
 
